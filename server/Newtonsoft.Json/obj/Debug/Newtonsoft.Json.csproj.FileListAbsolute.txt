@@ -1,0 +1,6 @@
+C:\Users\11001178\Desktop\jabboV3\server\Newtonsoft.Json\bin\Debug\Newtonsoft.Json.XML
+C:\Users\11001178\Desktop\jabboV3\server\Newtonsoft.Json\bin\Debug\Newtonsoft.Json.dll
+C:\Users\11001178\Desktop\jabboV3\server\Newtonsoft.Json\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\11001178\Desktop\jabboV3\server\Newtonsoft.Json\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\11001178\Desktop\jabboV3\server\Newtonsoft.Json\obj\Debug\Newtonsoft.Json.dll
+C:\Users\11001178\Desktop\jabboV3\server\Newtonsoft.Json\obj\Debug\Newtonsoft.Json.pdb

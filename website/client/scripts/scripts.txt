@@ -1,0 +1,1 @@
+client;global;lib;debug;resize;preload;json;md5;alchemy;packets;animate;busy;login;register;mainview;chatbox;room;furni;avatars;inv;navi;matic;messenger;catalogue;club;camera;help;sound

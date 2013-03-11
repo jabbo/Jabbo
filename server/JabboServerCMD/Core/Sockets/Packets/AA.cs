@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Newtonsoft.Json;
+
+namespace JabboServerCMD.Core.Sockets.Packets
+{
+    [JsonObject(MemberSerialization.OptOut)]
+    public class AA
+    {
+        public int I;
+        public string U;
+        public string M;
+        public string C;
+        public string S;
+        public string B;
+        public int X;
+        public int Y;
+    }
+}

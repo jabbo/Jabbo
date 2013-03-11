@@ -1,0 +1,39 @@
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\bin\Debug\JabboServerCMD.exe.config
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\bin\Debug\JabboServerCMD.exe
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\bin\Debug\JabboServerCMD.pdb
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\bin\Debug\MySql.Data.dll
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.dll
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.xml
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\obj\Debug\JabboServerCMD.exe
+C:\Users\11001178\Desktop\jabboV3\jabboV3\server\JabboServerCMD\obj\Debug\JabboServerCMD.pdb
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\JabboServerCMD.exe.config
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\obj\Debug\JabboServerCMD.exe
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\obj\Debug\JabboServerCMD.pdb
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\JabboServerCMD.exe
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\JabboServerCMD.pdb
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\MySql.Data.dll
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.dll
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.xml
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\Alchemy.dll
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\Alchemy.config
+C:\Users\11001178\Desktop\jabboV3\server\JabboServerCMD\bin\Debug\Alchemy.pdb
+C:\AppServ\www\jabbo\server\JabboServerCMD\bin\Debug\JabboServerCMD.exe.config
+C:\AppServ\www\jabbo\server\JabboServerCMD\obj\Debug\JabboServerCMD.exe
+C:\AppServ\www\jabbo\server\JabboServerCMD\obj\Debug\JabboServerCMD.pdb
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\JabboServerCMD.exe.config
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\obj\Debug\JabboServerCMD.exe
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\obj\Debug\JabboServerCMD.pdb
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\Alchemy.config
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\JabboServerCMD.exe
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\JabboServerCMD.pdb
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\Alchemy.dll
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\MySql.Data.dll
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.dll
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\Alchemy.pdb
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\bin\Debug\Newtonsoft.Json.xml
+C:\Users\11001178\Desktop\Jabbo V3.1\server\JabboServerCMD\obj\Debug\ResolveAssemblyReference.cache

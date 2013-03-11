@@ -1,0 +1,42 @@
+FOR V3.2:
+*********
+- make php mysql PDO (prevent from sql injection)
+- fix check for writable cache directory
+- sso ticket (secure login)
+
+
+**************
+- bots are lazy: once they sit down, they remain seated forever (bug)
+- when holding camera the camera disappears at certain angles. This is due to a bug in the avatar3.php script
+- sticky notes
+- teleports
+- badge chooser
+- finish jabbo club
+- room block better check serverside, now try and catch (:block)
+- chatbubble bug
+- pictures: avatars in doors not shown
+- kicking: button clientside
+- poster placement bug in room with holes
+- unique bot IDs? (now only unique in every room)
+- stacking
+- furni packets: preload furni
+- furni manager: count right   (:count does work in debug)
+- friend request in room
+- exchange
+- trophies
+- presents
+- wallpaper
+- waving
+- catalogue marketplace
+- MOD tool: invite Jabbos
+- drinks (you can't take them while holding camera!)
+- :SPEECH ON/OFF MOD
+- choosing holes in rooms for users
+- meubel credit codes + tradeable daarbij
+- official console messages
+- go to user in console
+- help reports
+- ph box when furni could not be loaded
+- client_online in server, not in db
+- remove all MAX() stuff serverside (messenger)
+- MOD tool: configure furniture

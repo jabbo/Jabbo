@@ -1,0 +1,12 @@
+C:\Users\11001178\Desktop\jabboV3\server\Alchemy\bin\Debug\Alchemy.config
+C:\Users\11001178\Desktop\jabboV3\server\Alchemy\bin\Debug\Alchemy.dll
+C:\Users\11001178\Desktop\jabboV3\server\Alchemy\bin\Debug\Alchemy.pdb
+C:\Users\11001178\Desktop\jabboV3\server\Alchemy\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\11001178\Desktop\jabboV3\server\Alchemy\obj\Debug\Alchemy.dll
+C:\Users\11001178\Desktop\jabboV3\server\Alchemy\obj\Debug\Alchemy.pdb
+C:\Users\11001178\Desktop\Jabbo V3.1\server\Alchemy\bin\Debug\Alchemy.config
+C:\Users\11001178\Desktop\Jabbo V3.1\server\Alchemy\bin\Debug\Alchemy.dll
+C:\Users\11001178\Desktop\Jabbo V3.1\server\Alchemy\bin\Debug\Alchemy.pdb
+C:\Users\11001178\Desktop\Jabbo V3.1\server\Alchemy\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\11001178\Desktop\Jabbo V3.1\server\Alchemy\obj\Debug\Alchemy.dll
+C:\Users\11001178\Desktop\Jabbo V3.1\server\Alchemy\obj\Debug\Alchemy.pdb

@@ -1,0 +1,245 @@
+########################################
+#              JABBO  3.1              #
+#                                      #
+#           PACKET STRUCTURE           #
+#                                      #
+#                                      #
+#       made by Thomas Vermaercke      #
+#                                      #
+#                                      #
+########################################
+
+BUTTONS: 59 (next button = +1)
+PACKETS: 72 (next packet = +1)
+
+#################################
+CATALOGUE
+furni_name:price;furni_name:price:no;   // no: not tradeable
+w1:Wow1text;w2:Wow2text;t1:text1
+
+GENDATA
+1,117,33,117,22,128,22,144,32, 6, 65, 101,133
+1,117,33,117,22,128,22,144,TILE WIDTH, 6, 65, 101,WALL HEIGHT
+
+jabboBE155 -> WinSCP
+
+#################################
+(2 letter header)(JSON Data - Optional)(#)
+
+(B) = Both Client And Server Send
+(C) = Only Client Sends
+(S) = Only Server Sends
+
+[] = Server
+() = Client
+
+========================
+Connection
+========================
+(B) 1 = Connection Accepted
+(B) 2 = Socket Is About To Be Closed
+(S) 3 = Connection error; invalid packet.
+
+========================
+Pinging
+========================
+(B) 5 = Ping Request, Must Reply With R!
+(B) 6 = Ping Response, No Need To Reply.
+
+========================
+Status
+========================
+(S) 8 = User Notification (Updated Credits Etc)
+	8{"Cr": AMOUNT OF CREDITS, "M": MOTTO, "C": CLOTHES, "B": BADGE}
+(C) 9 = when user is inactive
+(C) 10 = when user is active again
+
+========================
+Messages
+========================
+(S) 13 = Message
+	13{"M": MESSAGE, "T": TITLE}
+	
+========================
+MOD TOOLS
+========================
+(C) 11 = request server load (RAM)
+(S) 12 = SERVER RAM
+	12{"R": RAM}
+(C) 14 = Global Alert
+	14{"M": MESSAGE}
+(C) 62 = Opens everyone's chatbox
+(S) 63 = Open chatbox
+	
+========================
+Registering
+========================
+(C) 15 = register check
+	15{"IP": IP ADDRESS}
+(S) 16 = register check answer
+	16{"A": ANSWER}
+			ok: 	everything fine
+			multi:	you already have an account with this IP address
+			age:	you're too young
+			closed:	registrations are closed
+			ban:	your IP has been banned
+			cclosed:the client is closed
+========================
+Logging In
+========================
+(C) 17 = Login
+	17{"U": USERNAME, "P": PASSWORD}
+(S) 18 = Login Was Successful.
+(S) 19 = Login Failed.
+	19{"R": ERRORCODE}
+			error:	login failed, serverside (no mysql connection for example)
+			mail: 	account needs to be activated first (comment this code for now)
+			full:	too many Kyntos online
+			ban:	you're banned!
+			wrong:	incorrect login details
+			try: 	too many login trys
+(S) 20 = User Data
+	20{"I": ID, "F": FUNCTIE, "MY": MONEY, "CB": CURRENT BADGE, "B": BADGES ARRAY, "MM": MESSENGER MISSION, "C": CLOTHES, "M": MISSION, "UN": USERNAME, ID: [{"I": ID, "T": TILE, "S": STACKNR, "SH": STACKHEIGHT, "H": TURN, "A": ACTION, "F":FURNI}]}
+(C) 21 = Login Complete Clientside
+
+========================
+Messenger
+========================
+(C) 22 = CHANGE MESSENGER MISSION
+	22{"M": MISSION}
+(C) 23 = SEARCH
+	23{"N": USERNAME}
+(S) 24 = SEARCH ANSWER
+	24{"I": USERID, "M": MESSENGER MISSION, "C": CLOTHES, "L", LAST ONLINE, "O": ONLINE STATUS, "A", ADDABLE}
+(C) 25 = REQUEST FRIENDSHIP
+	25{"I": USERID}
+(C) 26 = REMOVE BUDDY
+	26{"I": USERID}
+(S) 27 = FRIENDSHIP REQUESTS
+	27{"R": ["I": REQUESTID, "N": USERNAME]}
+(C) 28 = ANSWER REQUEST
+	28{"I": REQUESTID, "A": ANSWER}
+(S) 29 = FRIENDLIST
+	29{"F": ["I": USERID, "N": USERNAME, "M": MISSION, "O": ONLINE, "F": FOLLOWABLE]}
+(C) 30 = SEND MESSAGE
+	30{"I": RECEIVERID, "M": MESSAGE}
+(S) 31 = MESSAGE
+	31{"I": MESSAGEID, "FI": FRIENDID, "FN": FRIENDNAME, "C": CLOTHES, "M": MESSAGE, "D": DATE}
+(C) 32 = REMOVE MESSAGE
+	32{"I": MESSAGEID}
+	
+========================
+Catalogue
+========================
+(S) 33 = Money update
+	33{"M": MONEY, "S": EARNED THIS SESSION}
+(C) 34 = Buy Furni
+	34{"C": CATEGORY, "F": FURNI", "A": AMOUNT, "M": MODE, "T": TO USER, "Me": MESSAGE}
+(S) 35 = Buy Answer
+	35{"A": ANSWER}
+		error: buying failed
+		price: not enough credits
+		ok: succes
+	
+========================
+Credits Codes
+========================
+(C) 36 = Redeem coupon
+	36{"C": CODE}
+(S) 37 = Coupon Accepted
+(S) 38 = Coupon Failed
+	38{"E": no such code etc}
+
+========================
+Club
+========================
+(S) 72 = Club Status Update
+	72{"S": status, "D": resting days, "PM": past months, "RM": resting months}
+	
+========================
+Navigator
+========================
+(C) 39 = Request Navigator Update
+(S) 40 = Navigator details in an array of objects
+	40{"P": [{"I" : ID, "N" : PUBLIC NAME, "D" : PUBLIC DESCRIPTION, "U" : NUMBER OF PEOPLE IN ROOM, "M": MAX USERS, "T" : ROOM TYPE (theater/..)}], "R": [{"I" : ID,"N" : ROOM NAME, "D" : ROOM DESCRIPTION, "O" : OWNER, "U" : NUMBER OF PEOPLE IN ROOM, , "M" : MAX USERS, "T" : ROOM TYPE (public/private), "S" : ROOM SAFE, "P" : PASSWORD", "F" : FAVOURITE}], O: OWN ROOMS}
+	(P, R, O)
+(C) 67 = Navigator Search
+	67{"S": search}
+(C) 68 = Navigator Search Answer
+	68{"R": [the rooms]}
+
+========================
+Rooms
+========================
+(S) 41 = Room Data
+	41{"I": ID, "T": Type, "V": views, "N": name, "D": description, "O": owner, "ON": ownername, "Fl": floor, "Wl": wall, "L": lang, "B": breed, "Do": door, "M": mode, "R": rights, "V": bool voted, "S": score, "H": ["1_1", "2_2"], "F":[{"I": ID, "T": tile, "S": StackNR, "X": x, "Y": y, "H": h, "A": action, "F": furni, "Ty": type}]}
+(C) 42 = Change Room
+	42{"RID": ROOMID, "S": 1 = ROOM  2 = PUBLIC ROOM}
+(S) 43 = Room Change Failed.
+(S) 61 = Room is full.
+(S) 44 = Room Changed Successfull.
+(S) 45 = User Kicked From Room.
+(C) 46 = Leave Room
+(C) 65 = Vote
+	65{"V": VOTE: up/down}
+(S) 66 = Vote results
+	66{"S": SCORE}
+(C) 70 = Create Room
+	70{"N": NAME, "D": DESCRIPTION, "T": TYPE, "S": SAFEMODE, "P": PASS}
+(S) 71 = Create Room Answer
+	71{"A": ANSWER}	
+
+========================
+Furniture
+========================
+(S) 47 = Add/move furniture
+	47{"I": ID, "T": TILE, "S": STACKNR, "SH": STACKHEIGHT, "H": TURN, "A": ACTION, "F":FURNI}
+(S) 48 = Remove furniture
+	48{"I": ID}
+(C) 49 = Turn Furniture
+	49{"I": ID}
+(C) 50 = Move furniture
+	50{"I": ID, "T": tile}
+(C) 69 = Action furniture
+	69{"I": ID}
+========================
+Chat
+========================
+(C) 51 = Speach Message
+	51{"T": TO USER NAME OR R IF ROOM, "M": MESSAGE}
+(S) 52 = Speach Message
+	52{"U": USERNAME, "I":USERID, "M": MESSAGE}
+(S) 53 = User is spamming, block message bar for 3 seconds
+	53{"T": TIME}
+
+========================
+Help Report
+========================
+(C) 54 = Help Report
+	54{"M": MESSAGE}
+(S) 55 = Help Report
+	55{"ID": UID, "TI": TIME, "U": USERNAME, "M": MESSAGE}
+
+========================
+Avatars
+========================
+(S) 56 = Add Avatar
+	56{"I": ID, "U": USERNAME, "M": MOTTO, "C": CLOTHES, "B": BADGE, "X": X-CORD, "Y": Y-CORD, "St": status (sit/walk/idle) "Sta": status (brb/away/online), "S": HOEK}
+(S) 57 = Move Avatar
+	57{"I": ID, "X": X-CORD, "Y": Y-CORD, "H": HOEK}
+(S) 64 = Stop Avatar
+	64{"I": ID}
+(S) 58 = Remove Avatar
+	58{"I": ID}
+(C) 59 = Request To Move
+	59{"X": X-CORD, "Y": Y-CORD}
+!!(S) 60 = Update Status
+!!	60{"I": user id, "S": (online/brb)}
+(C) 61 = Kick bot
+	61{"I": BOT ID}
+	
+##############################
+MUS
+
+002 ID
+	Save photo

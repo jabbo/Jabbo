@@ -1,0 +1,116 @@
+#######################################
+#             JABBO V3.2              #
+#                                     #
+#      made by Thomas Vermaercke      #
+#                                     #
+#######################################
+
+Jabbo is a JavasScript clone of Habbo made by Thomas Vermaercke,
+a proof of concept that real MMO's can be done in JavaScript!
+Jabbo will be the ideal start to make other JS MMOCC's.
+All the code was made by me, only the images are from Sulake.
+This means, if you change those, you've got a fully legal game!
+I fully encourage this and hope someday many people will play
+a game that originated from this source! Good luck everybody!
+This release of Jabbo comes with a MIT license.
+
+TECHNOLOGY
+----------
+Client: HTML, CSS, JavaScript, PHP
+Server: C#.NET
+Database: MySQL
+
+DISCLAIMER
+----------
+As this project was started back in 2006, before HTML5 or any JavaScript library excisted,
+and perhaps more importantly, before I could really code, it contains much depreciated code.
+Many problems can be solved in much more elegant and readable ways nowadays - JavaScript has become
+so much nicer! Still, as everything does work nicely, and some logic used here is still very nice and
+doens't need any changing - I believe it can be used as a base to start with or as an inspiration to
+use when creating a new MMO from scratch.
+
+
+INSTALLATION INSTRUCTIONS
+-------------------------
+- import Jabbo.sql.zip to your MySQL database
+- change database settings in website/client/config.php
+- change database settings in server/JabboServerCMD/bin/Debug/settings.ini
+- run server/JabboServerCMD/bin/Debug/JabboServerCMD.exe
+- put website/ on a webserver that supports PHP
+- to configure the statistics on the homepage: update graph/startdate.txt
+- register an account and set your rank in table "members" to 4 (admin)
+- go to a room (or create one) and type ":bots 4" to have some company :D
+
+NOTES
+-----
+- default port is 3500. To change, change website/client/scripts/packets.js -> init : function() {	socket.connect(document.domain, 3500);}
+- also change server/JabboServerCMD/bin/Debug/settings.ini
+- make sure the /cache dirs are writeable for PHP!
+- to run server in MONO on Linux: set linux to true in settings.ini
+- if you want to debug errors with for example FireBug, set "client_error" to false in table opties
+- if you don't want the client to stop and show an error message when there's an error (cause that's very radical), set "stop_error" to false in table opties
+
+###############
+#DOCUMENTATION#
+###############
+- see Jabbo Structure.txt for Packet structure
+- see Todo.txt for todo list
+- client scripts are stored in client/scripts
+- client/scripts/scripts.txt indicates which scripts are to be included when loading the client
+- if you are rank 4 (manager), press PageUp:  the debug screen will show. Enter :help for more info
+
+ROOM COMMANDS
+-------------
+:whereami
+:roomalert MESSAGE
+:globalalert MESSAGE
+:alertuser USER MESSAGE
+:ban USER
+:online
+:kick USER
+:bots AMOUNT
+:kickbots
+:pickallup
+
+FURNITURE SYSTEM
+----------------
+
+- Table 'furni' contains all the different furnitures. (still in Dutch currently, anyone willing to translate? :P)
+'afb' stores how many times you can rotate the piece of furniture (1, 2 or 4)
+'soort' is the kind of furniture ('' is normal, 'tele' is teleport, 'tapijt' is rug, 'stoel' is chair, 'poort' is gate, 'geld' is exchange money, 'bed' is bed, 'camera' is camera, 'poster' is poster, ..)
+'action' is wether or not you can turn it on (0 or 1)  (for example: lights)
+change_x, change_y etc are all values used to display the furniture correctly on a tile
+'stacking' is it stackable? (0 or 1)
+'stackheight' is in pixels
+'lang' is furni length (in tiles)
+'breed' is furni breadth (in tiles)
+
+- in furni_history all the transcations are stored (for future development of button "transactions" in catalogue)
+
+- All furniture bought by users goes to the table "items"
+
+- The catalogue is stored in table "shop". I think the tablestructure of shop is pretty straightforward if you look at the already excisting examples.
+(still in Dutch currently, anyone willing to translate? :P)
+There are different kind of 'layouts': 'frontpage', 'layout2', 'camera', 'club', 'market', 'norares', 'presents' and 'productpage1' (they're all there, you can see how they're used)
+'access' means which user ranks can access the pages
+Furni is added like this: "trax1:10;" means furni 'trax1' for the price of 10 Credits, you could also add ":no" to it ("trax1:10:no;") which means it isn't tradeable.
+
+
+- So to add a piece of furniture:
+*add the right images in "client/images/furni" (look at the others for examples!)
+*add the right data in table furni (setting the change_x values is a pain in the ass without any tools which haven't been created yet)
+*add the piece of furniture to a page in the catalogue
+
+
+It's very hard to manage the furniture system atm. Would anyone be willing to write a nice housekeeping system?
+In Jabbo V2 I had tools for this, but none have been created for Jabbo V3 yet, and I don't have the time.
+
+TO OBFUSCATE JAVASCRIPT:
+------------------------
+
+- take js.js 
+- comment DEVONLY stuff
+- (use simple mode of Google closure compiler)
+- use bananascript to obfuscate (google it :p)
+- upload new js.js to scripts map
+- now only js.js is loaded, and this is obfuscated
